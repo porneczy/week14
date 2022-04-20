@@ -5,7 +5,7 @@ class ButtonWithClass extends Component {
         super()
         this.state = {
             key1: "this is default state of a class component",
-            key2: "megnyomtad"
+            key2: 0
         }
         this.handleClick = this.handleClick.bind(this);
     }
@@ -18,10 +18,14 @@ class ButtonWithClass extends Component {
 
     render() {
         return (
-
-            <button onClick={this.handleClick}>
-                {this.state.isToggleOn ? this.state.key2 : this.state.key1}
-            </button>
+            <>
+                <button onClick={this.handleClick}>
+                    {this.state.isToggleOn ? "sadsads" : this.state.key1}
+                </button>
+                <button onClick={ () => this.setState({key2:1})}>
+                    {this.state.key2}
+                </button>
+            </>
         )
     }
 }
